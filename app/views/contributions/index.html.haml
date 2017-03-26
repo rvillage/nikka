@@ -1,0 +1,19 @@
+%h1 Listing contributions
+
+%table
+  %thead
+    %tr
+      %th
+      %th
+      %th
+
+  %tbody
+    - @contributions.each do |contribution|
+      %tr
+        %td= link_to 'Show', contribution
+        %td= link_to 'Edit', edit_contribution_path(contribution)
+        %td= link_to 'Destroy', contribution, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Contribution', new_contribution_path
